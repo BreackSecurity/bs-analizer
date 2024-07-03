@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Estilos CSS adicionales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .charts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .chart {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+        .chart-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .chart-body {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido HTML -->
+    <h2>Bienvenido, {{ username }}</h2>
+    <p>Hola, {{ username }}. Has iniciado sesión correctamente.</p>
+
+    <div class="charts-container">
+        <!-- Contenedores para los gráficos -->
+        <div class="chart">
+            <div class="chart-header">
+                <span class="chart-title">ANÁLISIS DE PROTOCOLOS</span>
+            </div>
+            <div class="chart-body">
+                <canvas id="chart1"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="chart-header">
+                <span class="chart-title">TRÁFICO POR IP</span>
+            </div>
+            <div class="chart-body">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="chart-header">
+                <span class="chart-title">TIPOS DE TRÁFICO</span>
+            </div>
+            <div class="chart-body">
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="chart-header">
+                <span class="chart-title">DISTRIBUCIÓN DE PROTOCOLOS</span>
+            </div>
+            <div class="chart-body">
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para hacer la solicitud AJAX y manejar los datos
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    setupCharts(data);
+                })
+                .catch(error => console.error('Error al obtener los datos:', error));
+        });
+
+        function setupCharts(data) {
+            var protocolosData = {
+                labels: data.protocolosData.labels,
+                datasets: [{
+                    label: data.protocolosData.datasets[0].label,
+                    data: data.protocolosData.datasets[0].data,
+                    backgroundColor: data.protocolosData.datasets[0].backgroundColor
+                }]
+            };
+
+            var trafficData = {
+                labels: data.trafficData.labels,
+                datasets: [{
+                    label: data.trafficData.datasets[0].label,
+                    data: data.trafficData.datasets[0].data,
+                    backgroundColor: data.trafficData.datasets[0].backgroundColor
+                }]
+            };
+
+            var trafficTypeData = {
+                labels: ['UDP', 'TCP'], // Etiquetas para UDP y TCP
+                datasets: [{
+                    label: data.udpTcpData.datasets[0].label,
+                    data: data.udpTcpData.datasets[0].data,
+                    backgroundColor: data.udpTcpData.datasets[0].backgroundColor
+                }]
+            };
+
+            var protocolPieData = {
+                labels: data.arpScanData.labels,
+                datasets: [{
+                    label: data.arpScanData.datasets[0].label,
+                    data: data.arpScanData.datasets[0].data,
+                    backgroundColor: data.arpScanData.datasets[0].backgroundColor
+                }]
+            };
+
+            var ctx1 = document.getElementById('chart1').getContext('2d');
+            var ctx2 = document.getElementById('chart2').getContext('2d');
+            var ctx3 = document.getElementById('chart3').getContext('2d');
+            var ctx4 = document.getElementById('chart4').getContext('2d');
+
+            var chart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: protocolosData,
+                options: {
+                    // Opciones del gráfico
+                }
+            });
+
+            var chart2 = new Chart(ctx2, {
+                type: 'bar',
+                data: trafficData,
+                options: {
+                    // Opciones del gráfico
+                }
+            });
+
+            var chart3 = new Chart(ctx3, {
+                type: 'bar',
+                data: trafficTypeData,
+                options: {
+                    // Opciones del gráfico
+                }
+            });
+
+            var chart4 = new Chart(ctx4, {
+                type: 'pie',
+                data: protocolPieData,
+                options: {
+                    // Opciones del gráfico
+                }
+            });
+        }
+    </script>
+</body>
+</html>

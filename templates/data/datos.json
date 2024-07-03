@@ -1,0 +1,89 @@
+{
+    "protocolosData": {
+        "labels": ["HTTP", "DNS", "ARP", "UDP", "TCP"],
+        "datasets": [{
+            "label": "Cantidad de Paquetes",
+            "data": [120, 80, 50, 100, 150],
+            "backgroundColor": [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)"
+            ],
+            "borderColor": [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)"
+            ],
+            "borderWidth": 1
+        }]
+    },
+    "trafficData": {
+        "labels": ["IP1", "IP2", "IP3", "IP4", "IP5"],
+        "datasets": [{
+            "label": "Tráfico por IP",
+            "data": [300, 200, 150, 180, 250],
+            "backgroundColor": [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)"
+            ],
+            "borderColor": [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)"
+            ],
+            "borderWidth": 1
+        }]
+    },
+    "trafficTypeData": {
+        "labels": ["HTTP", "FTP", "DNS", "SSH", "SMTP"],
+        "datasets": [{
+            "label": "Tipos de Tráfico",
+            "data": [120, 50, 80, 30, 40],
+            "backgroundColor": [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)"
+            ],
+            "borderColor": [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)"
+            ],
+            "borderWidth": 1
+        }]
+    },
+    "protocolPieData": {
+        "labels": ["HTTP", "DNS", "ARP", "UDP", "TCP"],
+        "datasets": [{
+            "data": [25, 15, 10, 20, 30],
+            "backgroundColor": [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)"
+            ],
+            "borderColor": [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)"
+            ],
+            "borderWidth": 1
+        }]
+    }
+}

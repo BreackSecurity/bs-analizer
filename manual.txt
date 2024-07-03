@@ -1,0 +1,4 @@
+1 debe crear un entorno virtual con las librerias nesesarias  
+2 habilitar el entorno virtual
+3 ejecutar como super usuario
+4 para analizar archivos con pyshark debe copiar el archivo .pcap con nombre ARCHIVO.pcap

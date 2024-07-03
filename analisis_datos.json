@@ -1,0 +1,118 @@
+{
+    "protocolosData": {
+        "labels": [
+            "ARP",
+            "UDP",
+            "HTTPS",
+            "DNS",
+            "HTTP",
+            "ICMP",
+            "Otro"
+        ],
+        "datasets": [
+            {
+                "label": "Protocolos",
+                "data": [
+                    69,
+                    17,
+                    11,
+                    2,
+                    1,
+                    0,
+                    0
+                ],
+                "backgroundColor": [
+                    "#007bff",
+                    "#28a745",
+                    "#ffc107",
+                    "#dc3545"
+                ]
+            }
+        ]
+    },
+    "trafficData": {
+        "labels": [
+            "192.168.0.2",
+            "192.168.0.14",
+            "142.250.219.142"
+        ],
+        "datasets": [
+            {
+                "label": "Tr\u00e1fico",
+                "data": [
+                    68,
+                    13,
+                    8
+                ],
+                "backgroundColor": [
+                    "#007bff",
+                    "#28a745",
+                    "#ffc107"
+                ]
+            }
+        ]
+    },
+    "trafficTypeData": {
+        "labels": [
+            "ARP",
+            "IPv4"
+        ],
+        "datasets": [
+            {
+                "label": "Tipos de Tr\u00e1fico",
+                "data": [
+                    69,
+                    31
+                ],
+                "backgroundColor": [
+                    "#007bff",
+                    "#28a745",
+                    "#ffc107",
+                    "#dc3545"
+                ]
+            }
+        ]
+    },
+    "arpScanData": {
+        "labels": [
+            "192.168.0.2",
+            "192.168.0.14",
+            "192.168.0.1"
+        ],
+        "datasets": [
+            {
+                "label": "Consultas ARP",
+                "data": [
+                    1773,
+                    4,
+                    2
+                ],
+                "backgroundColor": [
+                    "#007bff",
+                    "#28a745",
+                    "#ffc107"
+                ]
+            }
+        ]
+    },
+    "udpTcpData": {
+        "labels": [
+            "UDP",
+            "TCP"
+        ],
+        "datasets": [
+            {
+                "label": "UDP vs TCP",
+                "data": [
+                    2,
+                    98
+                ],
+                "backgroundColor": [
+                    "#007bff",
+                    "#28a745"
+                ]
+            }
+        ]
+    },
+    "rojo": "192.168.0.2"
+}
